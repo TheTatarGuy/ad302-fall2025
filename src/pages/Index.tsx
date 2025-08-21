@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen snap-y snap-mandatory overflow-y-scroll md:snap-none">
       <Header />
       <Hero />
       <About />

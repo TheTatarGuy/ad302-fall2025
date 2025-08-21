@@ -36,49 +36,51 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-12 sm:py-16 lg:py-20 bg-gradient-secondary">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Отзывы клиентов</h2>
-          <p className="text-lg sm:text-xl text-muted-foreground">
-            Мнения людей, которым я помогла найти путь к внутренней гармонии
-          </p>
-        </div>
+    <section id="testimonials" className="min-h-screen flex items-center bg-gradient-secondary snap-start">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-20">
+        <div className="h-full flex flex-col justify-center">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 lg:mb-6">Отзывы</h2>
+            <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground">
+              <span className="md:hidden">Мнения моих клиентов</span>
+              <span className="hidden md:block">Мнения людей, которым я помогла найти путь к внутренней гармонии</span>
+            </p>
+          </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="shadow-soft hover:shadow-medium transition-all">
-              <CardContent className="p-6">
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  "{testimonial.text}"
-                </p>
-                <div className="font-semibold text-foreground">
-                  {testimonial.name}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
+            {testimonials.slice(0, 3).map((testimonial, index) => (
+              <Card key={index} className="shadow-soft hover:shadow-medium transition-all">
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex mb-2 sm:mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-3 h-3 sm:w-4 h-4 lg:w-5 h-5 fill-accent text-accent" />
+                    ))}
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-4 leading-relaxed">
+                    <span className="md:hidden">"{testimonial.text.slice(0, 80)}..."</span>
+                    <span className="hidden md:block">"{testimonial.text}"</span>
+                  </p>
+                  <div className="text-sm font-semibold text-foreground">
+                    {testimonial.name}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
-        <div className="text-center mt-12 sm:mt-16">
-          <div className="bg-card rounded-2xl p-6 sm:p-8 shadow-soft max-w-2xl mx-auto">
-            <div className="grid grid-cols-3 gap-4 sm:gap-8">
+          <div className="bg-card rounded-2xl p-4 sm:p-6 lg:p-8 shadow-soft max-w-2xl mx-auto w-full">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-primary mb-2">98%</div>
-                <div className="text-sm sm:text-base text-muted-foreground">довольных клиентов</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-1 sm:mb-2">98%</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">довольных</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-secondary mb-2">4.9</div>
-                <div className="text-sm sm:text-base text-muted-foreground">средняя оценка</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary mb-1 sm:mb-2">4.9</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">оценка</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-accent mb-2">120+</div>
-                <div className="text-sm sm:text-base text-muted-foreground">отзывов</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-accent mb-1 sm:mb-2">120+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">отзывов</div>
               </div>
             </div>
           </div>
