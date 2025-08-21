@@ -97,7 +97,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <Card className="shadow-medium order-2">
-              <CardHeader className="p-4 sm:p-6">
+              <CardHeader className="p-4  pt-8 sm:p-6">
                 <CardTitle className="text-lg sm:text-xl lg:text-2xl">Записаться</CardTitle>
                 <p className="text-xs sm:text-sm text-muted-foreground">
                   <span className="md:hidden">Заполните форму для записи</span>
