@@ -14,8 +14,9 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">
-            Психолог Анна Иванова
+          <div className="text-lg sm:text-xl md:text-2xl font-bold text-primary">
+            <span className="hidden sm:inline">Психолог Анна Иванова</span>
+            <span className="sm:hidden">А. Иванова</span>
           </div>
           
           {/* Desktop Navigation */}

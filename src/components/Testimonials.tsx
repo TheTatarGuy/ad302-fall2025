@@ -36,16 +36,16 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-gradient-secondary">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-6">Отзывы клиентов</h2>
-          <p className="text-xl text-muted-foreground">
+    <section id="testimonials" className="py-12 sm:py-16 lg:py-20 bg-gradient-secondary">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Отзывы клиентов</h2>
+          <p className="text-lg sm:text-xl text-muted-foreground">
             Мнения людей, которым я помогла найти путь к внутренней гармонии
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="shadow-soft hover:shadow-medium transition-all">
               <CardContent className="p-6">
@@ -65,20 +65,20 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <div className="bg-card rounded-2xl p-8 shadow-soft max-w-2xl mx-auto">
-            <div className="grid grid-cols-3 gap-8">
+        <div className="text-center mt-12 sm:mt-16">
+          <div className="bg-card rounded-2xl p-6 sm:p-8 shadow-soft max-w-2xl mx-auto">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">98%</div>
-                <div className="text-muted-foreground">довольных клиентов</div>
+                <div className="text-2xl sm:text-3xl font-bold text-primary mb-2">98%</div>
+                <div className="text-sm sm:text-base text-muted-foreground">довольных клиентов</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-secondary mb-2">4.9</div>
-                <div className="text-muted-foreground">средняя оценка</div>
+                <div className="text-2xl sm:text-3xl font-bold text-secondary mb-2">4.9</div>
+                <div className="text-sm sm:text-base text-muted-foreground">средняя оценка</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">120+</div>
-                <div className="text-muted-foreground">отзывов</div>
+                <div className="text-2xl sm:text-3xl font-bold text-accent mb-2">120+</div>
+                <div className="text-sm sm:text-base text-muted-foreground">отзывов</div>
               </div>
             </div>
           </div>

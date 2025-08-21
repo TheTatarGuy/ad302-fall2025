@@ -39,17 +39,17 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-6">Услуги</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+    <section id="services" className="py-12 sm:py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Услуги</h2>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Предлагаю комплексную психологическую помощь для людей всех возрастов. 
             Каждая сессия адаптируется под ваши индивидуальные потребности.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {services.map((service, index) => (
             <Card key={index} className="shadow-soft hover:shadow-medium transition-all hover:-translate-y-1">
               <CardHeader className="text-center pb-4">
@@ -79,10 +79,10 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="bg-card rounded-2xl p-8 shadow-soft">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="bg-card rounded-2xl p-6 sm:p-8 shadow-soft">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-semibold mb-4">Формат работы</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4">Формат работы</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-6 h-6 text-primary mt-0.5" />
@@ -104,15 +104,16 @@ const Services = () => {
                 </div>
               </div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">Первая консультация</div>
-              <div className="text-xl text-muted-foreground mb-4">Бесплатно (30 минут)</div>
+            <div className="text-center mt-6 lg:mt-0">
+              <div className="text-2xl sm:text-3xl font-bold text-primary mb-2">Первая консультация</div>
+              <div className="text-lg sm:text-xl text-muted-foreground mb-4">Бесплатно (30 минут)</div>
               <Button 
                 onClick={scrollToContact}
-                className="bg-gradient-primary shadow-medium"
+                className="bg-gradient-primary shadow-medium w-full sm:w-auto"
                 size="lg"
               >
-                Записаться на бесплатную консультацию
+                <span className="hidden sm:inline">Записаться на бесплатную консультацию</span>
+                <span className="sm:hidden">Бесплатная консультация</span>
               </Button>
             </div>
           </div>

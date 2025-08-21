@@ -32,16 +32,16 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-6">Контакты</h2>
-          <p className="text-xl text-muted-foreground">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Контакты</h2>
+          <p className="text-lg sm:text-xl text-muted-foreground">
             Готова помочь вам на пути к внутренней гармонии. Свяжитесь со мной удобным способом
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
             <Card className="shadow-soft">
@@ -105,7 +105,7 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button className="bg-gradient-primary flex-1">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp
