@@ -45,7 +45,7 @@ const Contact = () => {
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
             {/* Contact Information */}
-            <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
+            <div className="space-y-4 sm:space-y-6 order-1">
               <Card className="shadow-soft">
                 <CardContent className="p-4 sm:p-6">
                   <div className="flex items-center mb-2 sm:mb-3">
@@ -96,7 +96,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <Card className="shadow-medium order-1 lg:order-2">
+            <Card className="shadow-medium order-2">
               <CardHeader className="p-4 sm:p-6">
                 <CardTitle className="text-lg sm:text-xl lg:text-2xl">Записаться</CardTitle>
                 <p className="text-xs sm:text-sm text-muted-foreground">
