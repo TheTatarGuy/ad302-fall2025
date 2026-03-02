@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { getContent, type Language } from "@/i18n/content";
 
-const Header = () => {
+type HeaderProps = {
+  lang: Language;
+};
+
+const Header = ({ lang }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { header } = getContent(lang);
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
 
@@ -15,38 +21,41 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-lg sm:text-xl md:text-2xl font-bold text-primary">
-            <span className="hidden sm:inline">Психолог Анна Иванова</span>
-            <span className="sm:hidden">А. Иванова</span>
+            <span className="hidden sm:inline">{header.brandLong}</span>
+            <span className="sm:hidden">{header.brandShort}</span>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('about')}
+            <button
+              onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              О себе
+              {header.nav.about}
             </button>
-            <button 
-              onClick={() => scrollToSection('services')}
+            <button
+              onClick={() => scrollToSection("services")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Услуги
+              {header.nav.services}
             </button>
-            <button 
-              onClick={() => scrollToSection('testimonials')}
+            <button
+              onClick={() => scrollToSection("testimonials")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Отзывы
+              {header.nav.testimonials}
             </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
+            <button
+              onClick={() => scrollToSection("contact")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Контакты
+              {header.nav.contact}
             </button>
-            <Button onClick={() => scrollToSection('contact')} className="bg-gradient-primary">
-              Записаться
+            <Button
+              onClick={() => scrollToSection("contact")}
+              className="bg-gradient-primary"
+            >
+              {header.cta}
             </Button>
           </nav>
 
@@ -63,32 +72,35 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t pt-4">
             <div className="flex flex-col space-y-4">
-              <button 
-                onClick={() => scrollToSection('about')}
+              <button
+                onClick={() => scrollToSection("about")}
                 className="text-left text-foreground hover:text-primary transition-colors"
               >
-                О себе
+                {header.nav.about}
               </button>
-              <button 
-                onClick={() => scrollToSection('services')}
+              <button
+                onClick={() => scrollToSection("services")}
                 className="text-left text-foreground hover:text-primary transition-colors"
               >
-                Услуги
+                {header.nav.services}
               </button>
-              <button 
-                onClick={() => scrollToSection('testimonials')}
+              <button
+                onClick={() => scrollToSection("testimonials")}
                 className="text-left text-foreground hover:text-primary transition-colors"
               >
-                Отзывы
+                {header.nav.testimonials}
               </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
+              <button
+                onClick={() => scrollToSection("contact")}
                 className="text-left text-foreground hover:text-primary transition-colors"
               >
-                Контакты
+                {header.nav.contact}
               </button>
-              <Button onClick={() => scrollToSection('contact')} className="bg-gradient-primary w-fit">
-                Записаться
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="bg-gradient-primary w-fit"
+              >
+                {header.cta}
               </Button>
             </div>
           </nav>
